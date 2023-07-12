@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LIST</title>
+</head>
+<body>
+    <h1>Welcome to Todo List</h1>
+    <!-- <br> -->
+    <a href="add-todo/">
+        <button>
+            <h1>Create</h1>
+        </button>
+    </a>
+    <!-- <br> -->
+    {% for todo in todos %}
+    <a href="/{{todo.id}}/">
+        <h2>{{ todo.title }}</h2>
+    </a>
+    <!-- <br> -->
+    <h4>{{ todo.desc }}</h4>
+    <!-- <br> -->
+    <p>{{ todo.date }}</p>
+    <br>
+    <a href="/{{todo.id}}/edit/">
+        Edit
+    </a>
+    <a href="/{{todo.id}}/delete/">
+        Delete
+    </a>
+    {% endfor %}
+</body>
+</html>
